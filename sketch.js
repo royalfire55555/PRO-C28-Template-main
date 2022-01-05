@@ -48,7 +48,7 @@ function draw() {
   board2.display();
 
   for (var i = 0; i < playerArrows.length; i++) {
-    if (playerArrows[i] !== undefined) {
+    if (playerArrows[i] != undefined) {
       playerArrows[i].display();
 
       var board1Collision = Matter.SAT.collides(
@@ -61,21 +61,9 @@ function draw() {
         playerArrows[i].body
       );
 
-      /*if (board1Collision || board2Collision) {
+      if (board1Collision.collided || board2Collision.collided) {
         score += 5;
-      }*/
-
-      /*if (board1Collision.collided && board2Collision.collided) {
-        score += 5;
-      }*/
-
-      /*if (board1Collision.collided || board2Collision.collided) {
-        score += 5;
-      }*/
-
-      /*if (board1Collision.collided || board2Collision.collided) {
-        score = 5;
-      }*/
+      }
 
       
       var posX = playerArrows[i].body.position.x;
@@ -109,21 +97,9 @@ function draw() {
   textSize(30);
   text("Remaining Arrows : " + numberOfArrows, 200, 100);
 
-  /*if (numberOfArrows == 5) {
+  if (numberOfArrows == 0) {
     gameOver();
-  }*/
-
-  /*if (numberOfArrows == 0) {
-    gameOver();
-  }*/
-
-  /*if (numberOfArrows = 0) {
-    gameOver();
-  }*/
-
-  /*if (numberOfArrows == 0) {
-    gameOver;
-  }*/
+  }
 
 }
 
